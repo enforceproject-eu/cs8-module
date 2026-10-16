@@ -10,11 +10,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-12-08T13:43:38.513185600+01:00[Europe/Berlin]", comments = "Generator version: 7.13.0")
 @Controller
+@SecurityRequirement(name = "basicAuth")
 @RequestMapping("${openapi.eNFORCECS5DataAccess.base-path:}")
 public class Cs8ApiController implements Cs8Api {
 

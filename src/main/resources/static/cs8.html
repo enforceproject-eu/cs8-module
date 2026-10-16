@@ -71,7 +71,7 @@ img.half {
 
                 const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                }).addTo(this.map);
+                });
 
                 tiles.addTo(this.map);
 
@@ -167,14 +167,5 @@ img.half {
 	</header>
 	<h1>ENFORCE CS8 Data</h1>
 	<div id="map"></div>
-	<form method="post" enctype="application/enforce-cs5-data" action="./cs5_catchment_data">
-      <div>
-        <label for="file">Choose CS 5 data to upload</label>
-        <input type="file" id="upload" name="upload" />
-      </div>
-      <div>
-        <button>Submit</button>
-      </div>
-    </form>
 </body>
 </html>
