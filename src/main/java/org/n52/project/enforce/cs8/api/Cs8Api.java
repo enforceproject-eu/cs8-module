@@ -5,6 +5,8 @@
  */
 package org.n52.project.enforce.cs8.api;
 
+import java.io.Serializable;
+
 import org.n52.project.enforce.cs8.model.Error;
 import org.n52.project.enforce.cs8.model.FeatureCollection;
 import org.springframework.http.ResponseEntity;
@@ -66,7 +68,7 @@ public interface Cs8Api {
         consumes = { "application/enforce-cs8-data" }
     )
     
-    ResponseEntity<?> addCs8DataAsBody(
+    ResponseEntity<Serializable> addCs8DataAsBody(
         @Parameter(name = "body", description = "feature data", required = true) @Valid @RequestBody org.springframework.core.io.Resource body
     );
 
@@ -115,7 +117,7 @@ public interface Cs8Api {
         produces = { "application/vnd.geo+json", "application/json" }
     )
     
-    ResponseEntity<?> getCs8Data(
+    ResponseEntity<Serializable> getCs8Data(
         
     );
 

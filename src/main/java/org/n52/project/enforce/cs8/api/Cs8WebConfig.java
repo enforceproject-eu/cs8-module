@@ -17,10 +17,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class Cs8WebConfig implements WebMvcConfigurer {
     
-//    /** {@inheritDoc} */
-//    @Override
-//    public void configureMessageConverters(List<HttpMessageConverter<?>> messageConverters) {
-//        messageConverters.add(new Cs8MessageConverter());
-//    }
+    @Override
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(new Cs8MessageConverter());
+    }
     
 }

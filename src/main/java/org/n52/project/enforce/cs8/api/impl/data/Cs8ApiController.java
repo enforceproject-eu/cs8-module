@@ -1,6 +1,7 @@
 package org.n52.project.enforce.cs8.api.impl.data;
 
 import java.io.IOException;
+import java.io.Serializable;
 
 import org.n52.project.enforce.cs8.api.Cs8Api;
 import org.n52.project.enforce.cs8.utils.Cs8Utils;
@@ -32,7 +33,7 @@ public class Cs8ApiController implements Cs8Api {
     }
 
     @Override
-    public ResponseEntity<?> addCs8DataAsBody(@Valid Resource requestBody) {
+    public ResponseEntity<Serializable> addCs8DataAsBody(@Valid Resource requestBody) {
         try {
             cs8Utils.readExcelFile(requestBody.getInputStream());
         } catch (IOException e) {
@@ -42,7 +43,7 @@ public class Cs8ApiController implements Cs8Api {
     }
 
     @Override
-    public ResponseEntity<?> getCs8Data() {
+    public ResponseEntity<Serializable> getCs8Data() {
         return ResponseEntity.ok().body(cs5DataRepository.getGeoJson());
     }
 }
