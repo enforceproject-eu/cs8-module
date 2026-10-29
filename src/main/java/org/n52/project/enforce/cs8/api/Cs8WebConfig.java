@@ -2,6 +2,8 @@ package org.n52.project.enforce.cs8.api;
 
 import java.util.List;
 
+import org.springdoc.core.models.GroupedOpenApi;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -22,4 +24,8 @@ public class Cs8WebConfig implements WebMvcConfigurer {
         converters.add(new Cs8MessageConverter());
     }
     
+    @Bean
+    GroupedOpenApi c8Apis() {
+      return GroupedOpenApi.builder().group("cs8").pathsToMatch("/cs8_pfos_data/**").build();
+    }
 }
